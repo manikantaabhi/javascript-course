@@ -1,17 +1,22 @@
-// Accept user inputs
+//type conversions
 
-// let userName;
-
-// userName = window.prompt("What is userName:")
-// console.log(userName);
+let age= window.prompt("How old are you?");
+console.log(`Your age is: `+age+2);//concatinates 2 to the input as it takes string values;
 
 
-// let userName=window.prompt("wnat is userName");
-// console.log(userName);
+// let us convert the input to number/integer
 
-let userName;
-document.getElementById("myButton").onclick=function(){
-    userName = document.getElementById("myText").value;
-    document.getElementById("myH1").textContent=userName;
-}
 
+age=Number(age);
+console.log(age+2 , typeof age);
+
+let x=5;
+let y=Number(x);
+console.log(y, typeof y);
+
+y=String(y);
+console.log(y,typeof y);
+
+let z="Mani";
+let a=Number(z); // Gives NaN 
+console.log(a, typeof a);
