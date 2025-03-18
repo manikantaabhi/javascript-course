@@ -1,21 +1,15 @@
-const checkSel = document.getElementById("checkInput");
-const visaRadio = document.getElementById('visa');
-const masterRaido = document.getElementById("masterCard");
-const payPalRadio = document.getElementById("payPal");
-const submitBtn= document.getElementById("submitBtn");
+// string methods
 
-submitBtn.onclick=function()
-{
-    if(checkSel.checked){
-        document.getElementById("checkP").textContent="You are checked!";
-    }
-    else
-    document.getElementById("checkP").textContent="You are not checked!";
+let userName="Manikanta";
+console.log(userName.charAt(2));
 
-    visaRadio.checked?document.getElementById("radioP").textContent="you selected Visa":
-    masterRaido.checked?document.getElementById("radioP").textContent="You have seelcted MasterCard":
-    payPalRadio.checked?document.getElementById("radioP").textContent="You have selected Paypal":
-    document.getElementById("radioP").textContent="You have not selected payment method";
-
-
-}
+console.log(userName.indexOf("n"));
+console.log(userName.lastIndexOf("n"));
+console.log(userName.toLocaleLowerCase());
+console.log(userName.trim());
+console.log(userName.startsWith("M"));
+console.log(userName.endsWith("M"));
+console.log(userName.includes(" "));
+console.log(userName.includes("a"));
+console.log(userName.replace("a","i"));
+console.log(userName.replaceAll("a","i"));
