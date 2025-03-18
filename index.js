@@ -1,22 +1,19 @@
-//type conversions
+const incrementBtn=document.getElementById("increment-btn");
+const decrementBtn=document.getElementById("decrement-btn");
+const resetBtn=document.getElementById("reset-btn");
 
-let age= window.prompt("How old are you?");
-console.log(`Your age is: `+age+2);//concatinates 2 to the input as it takes string values;
+let count=0;
 
-
-// let us convert the input to number/integer
-
-
-age=Number(age);
-console.log(age+2 , typeof age);
-
-let x=5;
-let y=Number(x);
-console.log(y, typeof y);
-
-y=String(y);
-console.log(y,typeof y);
-
-let z="Mani";
-let a=Number(z); // Gives NaN 
-console.log(a, typeof a);
+incrementBtn.onclick=function(){
+    count++;
+    console.log(count);
+    document.getElementById("numPara").innerText=count;
+}
+decrementBtn.onclick=function(){
+    count--;
+    console.log(count);
+    document.getElementById("numPara").innerText=count;
+}
+resetBtn.onclick=function(){
+    document.getElementById("numPara").innerText=0;
+}
