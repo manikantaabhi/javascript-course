@@ -1,19 +1,28 @@
-const incrementBtn=document.getElementById("increment-btn");
-const decrementBtn=document.getElementById("decrement-btn");
-const resetBtn=document.getElementById("reset-btn");
+//Math
 
-let count=0;
+let x=3.21;
+let y=2;
+let z=1;
+// z=Math.round(x);
+// console.log(z);
+// z=Math.ceil(x);
+// console.log(z);
+// z=Math.floor(x);
+// console.log(z);
 
-incrementBtn.onclick=function(){
-    count++;
-    console.log(count);
-    document.getElementById("numPara").innerText=count;
-}
-decrementBtn.onclick=function(){
-    count--;
-    console.log(count);
-    document.getElementById("numPara").innerText=count;
-}
-resetBtn.onclick=function(){
-    document.getElementById("numPara").innerText=0;
-}
+// z= Math.trunc(x);
+// console.log(z);
+
+// z=Math.sqrt(x);
+// console.log(z);
+
+
+// z=Math.log(x);
+// console.log(z);
+
+// z=Math.sin(x);
+// z=Math.cos(x);
+
+let max=Math.max(x,y,z);
+let min=Math.min(x,y,z);
+console.log(max+" "+min);
