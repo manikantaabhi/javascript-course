@@ -1,26 +1,28 @@
-// rest parameters
-let x=[3,2,4,5,6];
+// Random password generator
+function generatePassword(passwordLength,includeLowerCase,includeUpperCase,includeNumbers, includeSecialChars)
+{
+    const upperCaseLetters="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lowerCaseLetters="abcdefghijklmnopqrstuvwxyz";
+    const numbers="1234567890";
+    const specialChars="~@#$%^&*()_+";
 
-function myFunc(c,d, ...foods){
-    console.log(c);
-    console.log(d);
-    console.log(...foods);
-}
-myFunc(...x);
-
-let result=0;
-function sum(...numbers){
-    for(let number of numbers){
-        result+=number;
+    let password="";
+    let allowedChars=(includeLowerCase?lowerCaseLetters:"")+
+                    (includeUpperCase?upperCaseLetters:"")+
+                    (includeNumbers?numbers:"")+
+                    (includeSecialChars?specialChars:"");
+    for(let i=0;i<passwordLength;i++){
+        let index=Math.floor(Math.random()*allowedChars.length);
+        password+=allowedChars[index];
     }
-    return result;
+    return password;
 }
 
-console.log(sum(3,4,4,5,6));
 
 
-function combineStrings(...names){
-    return names.join(" ");
-}
-
-console.log(combineStrings("Manikanta","Neerugatti"));
+let passwordLength=10;
+let includeUpperCase=true;
+let includeLowerCase=true;
+let includeNumbers=true;
+let includeSecialChars=true;
+console.log(generatePassword(passwordLength,includeLowerCase,includeUpperCase,includeNumbers, includeSecialChars));
