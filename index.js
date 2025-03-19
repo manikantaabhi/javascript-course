@@ -1,29 +1,42 @@
-// filter method
+// reduce method
 
-let nums=[5,46,3,2,4,5,6];
-let evenNums=nums.filter(e=>e%2===0);
-console.log(evenNums);
+//reduce(accumulator,element) : accumulator is-> initially it is first values and then it is result of the recude method and element is the second value and then subsequent values
 
-let oddNums=nums.filter(e=>e%2!==0);
-console.log(oddNums);
 
-// passing callbacks
-evenNums=nums.filter(evenNum);
+let nums=[2,3,4,5,1,3];
+let max=nums.reduce((x,y)=>Math.max(x,y));
+console.log(max);
 
-function evenNum(element)
-{
-    return element%2===0;
+let min=nums.reduce((x,y)=>Math.min(x,y));
+console.log(min);
+
+let sum=nums.reduce(SumOfArr);
+
+function SumOfArr(acc,ele){
+    return acc+ele;
 }
 
-console.log(evenNums);
+console.log(sum);
 
-oddNums=nums.filter(oddNum);
+let transactions=[
+    {type:"debit",amount:500},
+    {type:"debit",amount:1000},
+    {type:"credit",amount:500},
+    {type:"credit",amount:500},
+    {type:"debit",amount:1000},
+]
 
-function oddNum(element){
-    return element%2!==0;
+let totalBal=transactions.reduce(calBal,0);
+
+function calBal(acc,transaction){
+    if(transaction.type==="debit")
+    {
+        return acc-transaction.amount;
+    }
+    else if(transaction.type==="credit"){
+        return acc+transaction.amount;
+    }
+    return acc;
 }
-console.log(oddNums);
 
-const fruits=["banana","kiwi","promogranate"];
-const newFruits=fruits.filter(fruit=>fruit.length<5);
-console.log(newFruits);
+console.log(totalBal);
