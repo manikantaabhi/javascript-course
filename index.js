@@ -1,23 +1,25 @@
-// number guessing game
+// temperature converter
 
-const finalNum=Math.ceil(Math.random()*100);
-console.log(finalNum);
-let attempts=0;
-let num=window.prompt("enter your guess between 1 and 100");
-attempts++;
-while(true)
-if(!isNaN(num))
-{
-        if(num<finalNum)
-            num=window.prompt("to low please try entering higher number");
-        else if(num>finalNum)
-            num=window.prompt("too high please try entering smaller number");
-        else
-        {
-            alert(`Congrats!!!! you won!!! in ${attempts} attempts`);
-            break;
-        }
-        attempts++;
+const inputNum=document.getElementById("inputNum");
+
+const toF=document.getElementById("toFahrenheit");
+const toC=document.getElementById("toCelsius");
+const para=document.getElementById("convertedPara");
+
+let temp;
+
+
+function convert(){
+    if(toF.checked){
+        temp=Number(inputNum.value);
+        temp=temp*9/5+32;
+        para.textContent=temp.toFixed(1)+"°F";
+    }
+    else if(toC.checked){
+        temp=Number(inputNum.value);
+        temp=(temp-32)*(5/9);
+        para.textContent=temp.toFixed(1)+"°C";
+    }
+    else
+        para.textContent="Please select conversion type";
 }
-else
-    num=window.prompt("enter valid number");
