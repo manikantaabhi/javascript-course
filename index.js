@@ -1,25 +1,19 @@
-// arrow functions
+// classes and constructors 
 
-let nums=[1,2,3,4,5,6];
-
-let sum=nums.reduce((acc,ele)=>acc+ele);
-console.log(sum);
-
-let hello=function(){
-    console.log("Hello");
+class Product{
+    constructor(name,price){
+        this.name=name;
+        this.price=price;
+    }
+    displayDetails(){
+        console.log(`name=`+this.name+" Price="+this.price);
+    }
 }
 
-hello();
 
-setTimeout(()=>{
-    console.log("hello timeout");
-},3000);
+const p1=new Product("bag",35);
+p1.displayDetails();
 
-let doubled = nums.map((ele)=>{
-    return ele*2;
-})
+const p2= new Product("pen",5);
+p2.displayDetails();
 
-console.log(doubled);
-
-let even = nums.filter((e)=>e%2===0);
-console.log(even);
