@@ -1,12 +1,17 @@
-//moddules ES6
-// even if we import js files using static import it doesn't make big difference because all the imports are loaded initially.
-// To make a big difference in loading we need to use them dynamically as used below.
+// DOM manipulation
 
-document.getElementById("clickBtn").addEventListener("click",async ()=>{
-    const login = await import("./Util.js");
-    login.login();
-})
-document.getElementById("clickBtn2").addEventListener("click",async ()=>{
-    const x = await import("./another.js");
-    x.logout();
-})
+const h1=document.createElement("h1");
+h1.textContent="Hello";
+h1.style.backgroundColor="black";
+h1.style.color="white";
+document.body.append(h1);
+
+const li=document.createElement("li");
+const li1=document.createElement("li");
+li.textContent="Apple";
+li1.textContent="Banana";
+li.style.listStyleType="number";
+document.body.append(li);
+document.body.append(li1);
+
+document.body.insertBefore(li,document.getElementById("first"));
