@@ -1,21 +1,26 @@
-// spread operator ...
+// rest parameters
+let x=[3,2,4,5,6];
 
-console.log(Math.max(2,3,4));
+function myFunc(c,d, ...foods){
+    console.log(c);
+    console.log(d);
+    console.log(...foods);
+}
+myFunc(...x);
 
-let nums=[3,2,5,4];
-console.log(Math.max(nums)); // give NaN output
+let result=0;
+function sum(...numbers){
+    for(let number of numbers){
+        result+=number;
+    }
+    return result;
+}
 
-console.log(Math.max(...nums));
+console.log(sum(3,4,4,5,6));
 
-console.log(Math.min(...nums));
 
-let x="Manikanta";
-console.log(x);
-let charsInName=[...x];
-console.log(charsInName);
+function combineStrings(...names){
+    return names.join(" ");
+}
 
-let fruits=["apple","banana","mango"];
-let veggies=["beans","potatoes"];
-
-let all=[...fruits,...veggies];
-console.log(all);
+console.log(combineStrings("Manikanta","Neerugatti"));
