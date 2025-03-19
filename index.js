@@ -1,23 +1,7 @@
-// classes and constructors 
+// setTimeout
+let id;
+id= setTimeout(()=>{
+    console.log("Hello");
+},3000);
 
-class Product{
-    constructor(name,price){
-        this.name=name;
-        this.price=price;
-    }
-    displayDetails(){
-        console.log(`name=`+this.name+" Price="+this.price);
-    }
-}
-
-
-const p1=new Product("bag",35);
-p1.displayDetails();
-
-const p2= new Product("pen",5);
-p2.displayDetails();
-
-
-const products=[p1,p2];
-products.sort((a,b)=>a.name.localeCompare(b.name));
-console.log(products);
+clearTimeout(id);
