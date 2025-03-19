@@ -17,3 +17,7 @@ p1.displayDetails();
 const p2= new Product("pen",5);
 p2.displayDetails();
 
+
+const products=[p1,p2];
+products.sort((a,b)=>a.name.localeCompare(b.name));
+console.log(products);
