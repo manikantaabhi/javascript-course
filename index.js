@@ -1,15 +1,23 @@
-// string methods
+// number guessing game
 
-let userName="Manikanta";
-console.log(userName.charAt(2));
-
-console.log(userName.indexOf("n"));
-console.log(userName.lastIndexOf("n"));
-console.log(userName.toLocaleLowerCase());
-console.log(userName.trim());
-console.log(userName.startsWith("M"));
-console.log(userName.endsWith("M"));
-console.log(userName.includes(" "));
-console.log(userName.includes("a"));
-console.log(userName.replace("a","i"));
-console.log(userName.replaceAll("a","i"));
+const finalNum=Math.ceil(Math.random()*100);
+console.log(finalNum);
+let attempts=0;
+let num=window.prompt("enter your guess between 1 and 100");
+attempts++;
+while(true)
+if(!isNaN(num))
+{
+        if(num<finalNum)
+            num=window.prompt("to low please try entering higher number");
+        else if(num>finalNum)
+            num=window.prompt("too high please try entering smaller number");
+        else
+        {
+            alert(`Congrats!!!! you won!!! in ${attempts} attempts`);
+            break;
+        }
+        attempts++;
+}
+else
+    num=window.prompt("enter valid number");
