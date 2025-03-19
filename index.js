@@ -1,26 +1,21 @@
- // array
+// spread operator ...
 
- let fruits=["apple","banana","orange"];
+console.log(Math.max(2,3,4));
 
-//  fruits.unshift("berry");
-//  fruits.shift();
-//  fruits.push("berry");
-//  fruits.pop();
-let noOfFruits=fruits.length;
-let index=fruits.indexOf("banana");
+let nums=[3,2,5,4];
+console.log(Math.max(nums)); // give NaN output
 
-for(let i=0;i<fruits.length;i++){
-    console.log(fruits[i]);
-}
+console.log(Math.max(...nums));
 
-fruits.forEach(element => {
-    console.log(element);
-});
+console.log(Math.min(...nums));
 
-for(let fruit of fruits)
-    console.log(fruit);
+let x="Manikanta";
+console.log(x);
+let charsInName=[...x];
+console.log(charsInName);
 
-fruits.sort();
-console.log(fruits);
-fruits.sort().reverse();
- console.log(fruits);
+let fruits=["apple","banana","mango"];
+let veggies=["beans","potatoes"];
+
+let all=[...fruits,...veggies];
+console.log(all);
