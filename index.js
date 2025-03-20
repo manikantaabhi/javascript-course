@@ -1,8 +1,8 @@
-// Promises with reject
+// Async/Await with reject
 function walkDog(){
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{
-            reject("not executed");
+            resolve("You walk the dog");
         },1500)
     })
 }
@@ -23,14 +23,18 @@ function dumpTrash(){
     })
 }
 
-walkDog()
-        .then(value=> {
-            console.log(value);
-            return cleanKitchen()})
-        .then(value=>{
-            console.log(value);
-            return dumpTrash()})
-        .then(value=>{
-            console.log(value);
-        })
-        .catch(()=>console.log("ther is some error"));
+async function performTasks()
+{
+    const walk=await walkDog();
+    console.log(walk);
+
+    const clean=await cleanKitchen();
+    console.log(clean);
+
+    const dump=await dumpTrash();
+    console.log(dump);
+
+    console.log("you have completed all the tasks")
+}
+
+performTasks();
