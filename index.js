@@ -1,27 +1,28 @@
-//NodeList
+// call back hell if there are more than 4 nested callbacks like this
+function walkDog(callback){
+    setTimeout(()=>{
+        console.log("walk the dog");
+        callback();
+    },1500)
+    
+}
 
-// Select the container (which holds all buttons)
-const container = document.getElementById("container");
+function cleanKitchen(callback){
+    setTimeout(()=>{
+        console.log("clean the kitchen");
+        callback();
+    },2500)
+}
 
-// Use Event Delegation for mouseover, mouseout, and click
-container.addEventListener("mouseover", (event) => {
-    if (event.target.classList.contains("myButtons")) {
-        event.target.style.backgroundColor = "tomato";
-    }
+function dumpTrash(callback){
+    setTimeout(()=>{
+        console.log("dump the trash");
+        callback();
+    },500)
+}
+
+walkDog(()=>{
+    cleanKitchen(()=>{
+        dumpTrash(()=> console.log("you have completed all tasks"))
+    })
 });
-container.addEventListener("mouseout", (event) => {
-    if (event.target.classList.contains("myButtons")) {
-        event.target.style.backgroundColor = "black";
-    }
-});
-container.addEventListener("click", (event) => {
-    if (event.target.classList.contains("myButtons")) {
-        event.target.remove();
-    }
-});
-
-    const newBtn = document.createElement("button");
-    newBtn.classList.add("myButtons");
-    newBtn.textContent = "Button 6";
-    container.appendChild(newBtn);
-
