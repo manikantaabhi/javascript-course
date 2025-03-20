@@ -1,17 +1,27 @@
-// DOM manipulation
+//NodeList
 
-const h1=document.createElement("h1");
-h1.textContent="Hello";
-h1.style.backgroundColor="black";
-h1.style.color="white";
-document.body.append(h1);
+// Select the container (which holds all buttons)
+const container = document.getElementById("container");
 
-const li=document.createElement("li");
-const li1=document.createElement("li");
-li.textContent="Apple";
-li1.textContent="Banana";
-li.style.listStyleType="number";
-document.body.append(li);
-document.body.append(li1);
+// Use Event Delegation for mouseover, mouseout, and click
+container.addEventListener("mouseover", (event) => {
+    if (event.target.classList.contains("myButtons")) {
+        event.target.style.backgroundColor = "tomato";
+    }
+});
+container.addEventListener("mouseout", (event) => {
+    if (event.target.classList.contains("myButtons")) {
+        event.target.style.backgroundColor = "black";
+    }
+});
+container.addEventListener("click", (event) => {
+    if (event.target.classList.contains("myButtons")) {
+        event.target.remove();
+    }
+});
 
-document.body.insertBefore(li,document.getElementById("first"));
+    const newBtn = document.createElement("button");
+    newBtn.classList.add("myButtons");
+    newBtn.textContent = "Button 6";
+    container.appendChild(newBtn);
+
