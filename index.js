@@ -1,8 +1,7 @@
-// Promise hell like this
+// Promises with reject
 function walkDog(){
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{
-            resolve("walk the dog");
             reject("not executed");
         },1500)
     })
@@ -14,7 +13,6 @@ function cleanKitchen(){
             resolve("clean the kitchen");
         },2500)
     })
-   
 }
 
 function dumpTrash(){
@@ -34,4 +32,5 @@ walkDog()
             return dumpTrash()})
         .then(value=>{
             console.log(value);
-        });
+        })
+        .catch(()=>console.log("ther is some error"));
