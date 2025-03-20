@@ -25,12 +25,13 @@ function dumpTrash(){
     })
 }
 
-walkDog().then(value=> {
-    console.log(value);
-    cleanKitchen().then(value=>{
-        console.log(value);
-        dumpTrash().then(value=>{
+walkDog()
+        .then(value=> {
             console.log(value);
-        })
-    })
-})
+            return cleanKitchen()})
+        .then(value=>{
+            console.log(value);
+            return dumpTrash()})
+        .then(value=>{
+            console.log(value);
+        });
